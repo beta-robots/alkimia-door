@@ -1,0 +1,39 @@
+<launch>
+    <!-- LAUNCH INTERFACE -->
+    <arg name="gui" default="false" />
+
+    <!-- LAUNCH IMPLEMENTATION -->
+
+    <!-- #### -->
+
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find alkimia_door)/urdf/alkimia_door.urdf.xacro"/>
+
+    <param name="publish_frequency" value="100"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  />
+
+    <!-- load controller configurations -->
+    <rosparam file="$(find alkimia_door)/config/controllers.yaml" command="load"/>
+
+    <!-- Spawn the door in Gazebo  -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model alkimia_door -x 0 -y 0 -z 3.0 -R 0 -P 1.57 -Y 0" respawn="false"/>
+
+    <!-- load Gazebo simulation environment -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find alkimia_door)/worlds/simple_environment.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="true"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <!-- spawn controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" args="joint_state_controller joint_trajectory_controller"/>
+
+    <!-- the trajectory controller slider -->
+    <node name="my_controller_board" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/>
+
+    <!-- publish the joint states -->
+    <node name="joint_state_printer" pkg="rostopic" type="rostopic" args="echo /joint_states" output="screen"/>
+
+</launch>
