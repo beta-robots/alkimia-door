@@ -12,41 +12,41 @@
 			<origin xyz="${position}" rpy="${orientation}" />
 			<parent link="${parent}"/>
 			<child link="${name}_top_fin"/>
-			<axis xyz="0 0 1" />
+			<axis xyz="1 0 0" />
 			<limit lower="${0*pi/180}" upper="${85*pi/180}" effort="60" velocity="10"/>
 		</joint>
 
 		<link name="${name}_top_fin">
 			<inertial>
-				<origin xyz="0.5 0.005 0.15" rpy="0 0 0"/>
+				<origin xyz="-0.1 -0.55 0.01" rpy="0 0 0"/>
 				<mass value="2.0"/>
 				<inertia
-				ixx="0.06" ixy="0.0" ixz="0.0"
-				iyy="2.7" iyz="0.0"
+				ixx="2.6" ixy="0.0" ixz="0.0"
+				iyy="0.06" iyz="0.0"
 				izz="2.6"/>
 			</inertial>
 			<visual>
-				<origin xyz="0.5 0 0.15" rpy="0 0 0" />
+				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<!-- mesh filename="package://alkimia_door/urdf/meshes/top_fin.stl" scale=" .001 .001 .001" / -->
-					<box size="1.0 0.01 0.3"/>
+					<mesh filename="package://alkimia_door/urdf/meshes/top_fin.stl" scale=" .001 .001 .001" />
+					<!-- box size="1.0 0.01 0.3"/ -->
 				</geometry>
 				<material name="Brown">
 					<color rgba="0.545 0.27 0.07 1.0"/>
 				</material>
 			</visual>
 			<collision>
-				<origin xyz="0.5 0 0.15" rpy="0 0 0" />
+				<origin xyz="-0.1 -0.55 0.01" rpy="0 0 0" />
 				<geometry>
 					<!-- mesh filename="package://alkimia_door/urdf/meshes/top_fin.stl" scale=" .001 .001 .001" / -->
-					<box size="1.0 0.01 0.3"/>
+					<box size="0.2 1.1 0.02"/>
 				</geometry>
 			</collision>
 		</link>
 
 		<!-- BOTTOM FIN -->
 		<joint name="${name}_bottom_joint" type="revolute">
-			<origin xyz="1.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+			<origin xyz="0.0 -1.11 0.0" rpy="-1.57 0 -1.57" />
 			<parent link="${name}_top_fin"/>
 			<child link="${name}_bottom_fin"/>
 			<axis xyz="0 0 -1" />
@@ -59,28 +59,28 @@
 
 		<link name="${name}_bottom_fin">
 			<inertial>
-				<origin xyz="0.5 0.005 0.15" rpy="0 0 0"/>
+				<origin xyz="0.35 -0.01 -0.1" rpy="0 0 0"/>
 				<mass value="1.0"/>
 				<inertia
 				ixx="0.03" ixy="0.0" ixz="0.0"
-				iyy="1.35" iyz="0.0"
+				iyy="1.3" iyz="0.0"
 				izz="1.3"/>
 			</inertial>
 			<visual>
-				<origin xyz="0.5 0 0.15" rpy="0 0 0" />
+				<origin xyz="0.07 0.12 -0.017" rpy="0 0 0" />
 				<geometry>
-					<!-- mesh filename="package://alkimia_door/urdf/meshes/bottom_fin.stl" scale=" .001 .001 .001" / -->
-					<box size="1.0 0.01 0.3"/>
+					<mesh filename="package://alkimia_door/urdf/meshes/bottom_fin.stl" scale=" .001 .001 .001" />
+					<!-- box size="1.0 0.01 0.3"/ -->
 				</geometry>
 				<material name="Brown">
 					<color rgba="0.545 0.27 0.07 1.0"/>
 				</material>
 			</visual>
 			<collision>
-				<origin xyz="0.5 0 0.15" rpy="0 0 0" />
+				<origin xyz="0.65 -0.01 -0.1" rpy="0 0 0" />
 				<geometry>
 					<!-- mesh filename="package://alkimia_door/urdf/meshes/bottom_fin.stl" scale=" .001 .001 .001" / -->
-					<box size="1.0 0.01 0.3"/>
+					<box size="1.3 0.02 0.2"/>
 				</geometry>
 			</collision>
 		</link>
@@ -109,14 +109,15 @@
 
 	<link name="world"/>
 
-	<joint name="anchor_joint" type="fixed">
+	<joint name="anchor_joint1" type="fixed">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
 		<parent link="world"/>
-		<child link="Iprofile"/>
+		<child link="Iprofile1"/>
 	</joint>
 
-	<link name="Iprofile">
+	<link name="Iprofile1">
 		<inertial>
-			<origin xyz="0.5 0.005 0.15" rpy="0 0 0"/>
+			<origin xyz="0 0 -0.1" rpy="0 0 0"/>
 			<mass value="50.0"/>
 			<inertia
 			ixx="1.0" ixy="0.0" ixz="0.0"
@@ -124,25 +125,59 @@
 			izz="1.0"/>
 		</inertial>
 		<visual>
-			<origin xyz="-0.1 -0.1 2.55" rpy="0.0 0 0"/>
+			<origin xyz="0 0 0" rpy="0.0 0 0"/>
 			<geometry>
-				<box size="0.2 0.2 5.1"/>
+				<mesh filename="package://alkimia_door/urdf/meshes/roof.stl" scale=" .001 .001 .001" />
+				<!-- box size="0.2 0.2 5.1"/ -->
 			</geometry>
 			<material name="Gray">
 				<color rgba="0.5 0.5 0.5 1.0"/>
 			</material>
 		</visual>
 		<collision>
-			<origin xyz="-0.1 -0.1 2.55" rpy="0.0 0 0"/>
+			<origin xyz="-0.1 -4 -0.1" rpy="0.0 0 0"/>
 			<geometry>
-				<box size="0.2 0.2 5.1"/>
+				<box size="0.2 8 0.2"/>
 			</geometry>
 		</collision>
 	</link>
 
-	<xacro:fin parent="Iprofile" name="fin1" position="0 0 0" orientation="0 0 0" isCoupled="${coupleFins}" ratio="2"/>
+	<joint name="anchor_joint2" type="fixed">
+		<origin xyz="0 0 0.3" rpy="0 0 0"/>
+		<parent link="world"/>
+		<child link="Iprofile2"/>
+	</joint>
 
-	<xacro:fin parent="Iprofile" name="fin2" position="0 0 0.4" orientation="0 0 0" isCoupled="${coupleFins}" ratio="2"/>
+	<link name="Iprofile2">
+		<inertial>
+			<origin xyz="0 0 -0.1" rpy="0 0 0"/>
+			<mass value="50.0"/>
+			<inertia
+			ixx="1.0" ixy="0.0" ixz="0.0"
+			iyy="1.0" iyz="0.0"
+			izz="1.0"/>
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0.0 0 0"/>
+			<geometry>
+				<mesh filename="package://alkimia_door/urdf/meshes/roof.stl" scale=" .001 .001 .001" />
+				<!-- box size="0.2 0.2 5.1"/ -->
+			</geometry>
+			<material name="Gray">
+				<color rgba="0.5 0.5 0.5 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="-0.1 -4 -0.1" rpy="0.0 0 0"/>
+			<geometry>
+				<box size="0.2 8 0.2"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<xacro:fin parent="Iprofile1" name="fin1" position="0.11 -0.13 -0.2" orientation="0 1.57 1.57" isCoupled="${coupleFins}" ratio="2"/>
+
+	<xacro:fin parent="Iprofile2" name="fin2" position="0.11 -0.13 -0.2" orientation="0 1.57 1.57" isCoupled="${coupleFins}" ratio="2"/>
 
 	<!-- <xacro:fin parent="Iprofile" name="fin3" position="0 0 0.6" orientation="0 0 0" isCoupled="${coupleFins}" ratio="2"/>
 
