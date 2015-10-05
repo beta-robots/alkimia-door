@@ -34,6 +34,9 @@
     <node name="my_controller_board" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/>
 
     <!-- publish the joint states -->
-    <node name="joint_state_printer" pkg="rostopic" type="rostopic" args="echo /joint_states" output="screen"/>
+    <!-- node name="joint_state_printer" pkg="rostopic" type="rostopic" args="echo /joint_states" output="screen"/ -->
+
+    <!-- rviz preconfigured -->
+    <!-- node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find alkimia_door)/launch/rviz.rviz" output="screen"/ -->
 
 </launch>
