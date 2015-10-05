@@ -50,101 +50,26 @@ Visualization Manager:
       Plane Cell Count: 2
       Reference Frame: Iprofile
       Value: false
-    - Alpha: 1
+    - Alpha: 0.5
       Class: rviz/RobotModel
-      Collision Enabled: false
+      Collision Enabled: true
       Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        Iprofile:
+        Iprofile1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Iprofile2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         Link Tree Style: Links in Alphabetic Order
-        fin10_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin10_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin11_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin11_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin12_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin12_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin13_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin13_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin14_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin14_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin15_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin15_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin16_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin16_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin17_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin17_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         fin1_bottom_fin:
           Alpha: 1
           Show Axes: false
@@ -165,76 +90,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        fin3_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin3_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin4_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin4_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin5_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin5_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin6_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin6_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin7_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin7_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin8_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin8_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin9_bottom_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fin9_top_fin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         world:
           Alpha: 1
           Show Axes: false
@@ -246,19 +101,41 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        Iprofile1:
+          Value: true
+        Iprofile2:
+          Value: true
+        fin1_bottom_fin:
+          Value: true
+        fin1_top_fin:
+          Value: true
+        fin2_bottom_fin:
+          Value: true
+        fin2_top_fin:
+          Value: true
+        world:
+          Value: true
       Marker Scale: 0.15
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        world:
+          Iprofile1:
+            fin1_top_fin:
+              fin1_bottom_fin:
+                {}
+          Iprofile2:
+            fin2_top_fin:
+              fin2_bottom_fin:
+                {}
       Update Interval: 0
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 170; 170; 127
@@ -283,30 +160,30 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.28605
+      Distance: 0.382973
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.02108
-        Y: 2.50215
-        Z: -0.103177
+        X: 1.39611
+        Y: 0.421927
+        Z: 0.00764306
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: -1.5698
+      Pitch: 0.155203
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.14433
+      Yaw: 1.64941
     Saved: ~
 Window Geometry:
   Displays:
-    collapsed: true
+    collapsed: false
   Height: 576
-  Hide Left Dock: true
+  Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000013c000001b2fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f0070006500720074006900650073020000019b000001b500000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730000000028000001b2000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000196fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000196000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000002f600000042fc0100000002fb0000000800540069006d00650100000000000002f6000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000002f6000001b200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000013c000001b2fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f0070006500720074006900650073020000019b000001b500000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000001b2000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000196fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000196000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000002f600000042fc0100000002fb0000000800540069006d00650100000000000002f6000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000001b4000001b200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -316,5 +193,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 758
-  X: 65
-  Y: 24
+  X: 55
+  Y: 14
