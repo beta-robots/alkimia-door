@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+
 <launch>
     <!-- LAUNCH INTERFACE -->
     <arg name="gui" default="false" />
@@ -23,12 +25,12 @@
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="gui" value="true"/>
-        <arg name="headless" value="true"/>
+        <arg name="headless" value="false"/>
         <arg name="debug" value="false"/>
     </include>
 
     <!-- spawn controllers -->
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" args="joint_state_controller joint_trajectory_controller"/>
+    <node ns="alkimia_door" name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" args="joint_state_controller joint_trajectory_controller"/>
 
     <!-- the trajectory controller slider -->
     <node name="my_controller_board" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/>

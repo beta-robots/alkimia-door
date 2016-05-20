@@ -1,4 +1,4 @@
-# alkimia_door:
+alkimia_door:
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
@@ -7,11 +7,5 @@
     type: effort_controllers/JointTrajectoryController
     joints:
     - fin1_top_joint
-    - fin1_bottom_joint
-    - fin2_top_joint
-    - fin2_bottom_joint
     gains:
       fin1_top_joint: {p: 50000,  d: 10, i: 10000, i_clamp: 1000}
-      fin1_bottom_joint: {p: 50000,  d: 10, i: 10000, i_clamp: 1000}
-      fin2_top_joint: {p: 50000,  d: 10, i: 10000, i_clamp: 1000}
-      fin2_bottom_joint: {p: 50000,  d: 10, i: 10000, i_clamp: 1000}
